@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <main id="geral">
+      <h1 id="lista">Lista de tarefas</h1>
+      <section class="input-area">
+        <label for="input-tarefa">Nova tarefa:</label><!-- Acessibilidade, o label conecta ao input (importante para leitores de tela)-->
+        <input type="text" id="input-tarefa" placeholder="Digite uma tarefa..." />
+        <button id="botao">Adicionar</button>
+      </section>
+      <ul id="tarefas"></ul>
+    </main>
+  </body>
+</html>

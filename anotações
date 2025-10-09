@@ -1,0 +1,24 @@
+ Issue “Adicionar tarefa” ok
+
+ Issue “Remover tarefa” ok
+
+ Issue “Marcar/desmarcar como concluída” ok
+
+ Issue “Salvar no localStorage”
+
+ Issue “Carregar do localStorage ao abrir página”
+
+ Issue “Responsividade (desktop / mobile)”
+
+ Issue “Deploy e link no README”
+
+ Issue “Variação extra: tema claro / escuro / filtros / busca”
+
+
+
+ 🧾 RESUMO FINAL — O QUE MUDAR E POR QUÊ
+Área	O que mudar	Por quê
+HTML	usar <main>, <ul>, <li>, <label>	semântica e acessibilidade
+CSS	adicionar .done, usar max-width	responsividade e clareza visual
+JS	remover variável global marcado e usar classList.toggle	corrige comportamento e simplifica
+Extras	limpar valores com .trim(), usar const/let corretamente	boas práticas modernas

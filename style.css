@@ -1,0 +1,79 @@
+/* Começa pelo body , as alterações aqui no body serão aplicadas na pagina toda!
+dpois começa a alterar os elementos "especificos"(#container ,#botao,  etc..)
+ */
+
+body {
+  width: 100%; /* Largura 100% da tela */
+  text-align: center; /* Alinhamento do conteúdo: centro */
+  font-family: monospace; /* fonte da letra: monospace */
+  margin-top: 50px; /* Distancia do topo da pagina */
+  color: white; /* Cor da letra */
+  user-select: none; /* desliga a seleção do usuario(evita que o usuario copie o texto )*/
+  background: linear-gradient(
+    120deg,
+    #007bff,
+    #004d99
+  ); /* Adiciona cor de fundo  */
+}
+
+#geral {
+  /* Aqui fica Toda a lista de tarefas */
+  max-width: 500px; /* Assim a lista se adapta em celulares. */
+  width: 90%; /* largura da caixa */
+  background-color: rgb(23, 120, 255); /* Cor de Fundo */
+  padding: 20px; /* Margem interna */
+  margin: auto; /* Margem automatica ,faz o elemento ficar centralizado */
+  text-align: center; /* Alinha o conteudo no centro */
+  border-radius: 30px; /* Arredonda a borda */
+  min-height: 200px; /* Altura minima(para garantir que a caixa não fique pequena de mais) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efetio de sombra */
+}
+
+#input-tarefa {
+  /* Campo onde vamos digitar as tarefas */
+  width: 65%; /* Largura:65% da caixa (porque ela está dentro da caixa) */
+  height: 38px; /* Altura  */
+  font-family: monospace;
+  border: none; /* desativa a borda */
+  border-radius: 8px; /* Arredonda as bordas */
+  padding-left: 10px; /* Margem interna á esquerda */
+  font-size: 16px; /* Tamanho da letra */
+}
+
+#botao {
+  /* Botao de adicionar */
+  font-size: 16px; /* Tamanho da letra */
+  font-family: monospace; /* Fonte da letra */
+  width: 25%; /* Largura da caixa(porque ela está dentro da caixa */
+  height: 38px; /* Altura */
+  border-radius: 10px; /* Arredondamento da borda */
+  background-color: rgb(233, 117, 0); /* Cor de fundo */
+  color: white; /* cor da letra */
+  border: none; /* Desativa a borda */
+  cursor: pointer; /* Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis */
+}
+
+#botao:hover {
+  /* Estilo quando passar o mouse sobre o botao */
+  background-color: rgb(217, 109, 0); /* Cor de fundo */
+}
+
+#botao:active {
+  /* Estilo de quando clicar no botao */
+  background-color: rgb(207, 104, 0); /* Cor de fundo */
+}
+
+#tarefas {
+  /* Estilo das tarefas */
+  width: 90%; /* Largura da caixa , porque ela está dentro da caixa */
+  margin: auto; /* Margem automática,faz o elemento ficar centralizado */
+  font-size: 16px; /* Tamanho da letra */
+  text-align: left; /* Alinhamento do texto a esquerda */
+  cursor: pointer; /* Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis */
+}
+
+.done {
+  /* Adiciona um estilo para a tarefa riscada */
+  text-decoration: line-through;/* Risca o texto */
+  opacity: 0.7;/* Deixa a tarefa mais "apagada" */
+}
