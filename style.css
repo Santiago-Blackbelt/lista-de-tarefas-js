@@ -74,6 +74,30 @@ body {
 
 .done {
   /* Adiciona um estilo para a tarefa riscada */
-  text-decoration: line-through;/* Risca o texto */
-  opacity: 0.7;/* Deixa a tarefa mais "apagada" */
+  text-decoration: line-through; /* Risca o texto */
+  opacity: 0.7; /* Deixa a tarefa mais "apagada" */
+}
+
+#limpar {
+  /* botão de limpar a lista */
+  font-size: 16px;/* Tamanho da letra */
+  font-family: monospace;/* Fonte da letra */
+  width: 25%; /* largura da caixa */
+  height: 38px;/* Altura */
+  border-radius: 10px;/* Arredondamento da borda */
+  background-color:rgb(233, 117, 0); /* Cor de fundo */ 
+  color: white;/* Cor da letra */
+  border: none;/* Tira a borda */
+  cursor: pointer;/*  Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis  */
+}
+
+#limpar:hover {
+  /* Estilo quando passar o mouse sobre o botao */
+  background-color: rgb(217, 109, 0); /* Cor de fundo */
+}
+
+
+#limpar:active {
+  /* Estilo de quando clicar no botao */
+  background-color: rgb(207, 104, 0); /* Cor de fundo */
 }

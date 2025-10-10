@@ -22,3 +22,29 @@ HTML	usar <main>, <ul>, <li>, <label>	semântica e acessibilidade
 CSS	adicionar .done, usar max-width	responsividade e clareza visual
 JS	remover variável global marcado e usar classList.toggle	corrige comportamento e simplifica
 Extras	limpar valores com .trim(), usar const/let corretamente	boas práticas modernas
+
+
+
+
+
+
+🧠 3️⃣ Explicação das mudanças
+Linha	Alteração	Por quê
+let valor = document.getElementById('novo').value.trim();	Agora pega o texto digitado e remove espaços	Garante que só o conteúdo seja salvo
+if (valor === '') return;	Interrompe se o campo estiver vazio	Evita salvar tarefas vazias
+`JSON.parse(localStorage.getItem('Tarefas'))		[]`
+listaDeTarefas.push(valor)	Adiciona o texto ao array antes de salvar	Atualiza lista corretamente
+mostraTarefas()	Função separada só pra exibir	Código mais limpo e reutilizável
+forEach no mostraTarefas()	Percorre todas as tarefas e mostra uma por linha	Exibição correta no HTML
+
+
+
+🧠 PRINCIPAIS AJUSTES E PORQUÊ
+Ajuste	Explicação
+id='input-tarefa'	substitui o antigo #novo, porque esse é o ID do campo no seu HTML
+id='tarefas'	substitui o antigo #retorno (agora é a <ul> onde aparecem as tarefas)
+localStorage.getItem('tarefas')	padronizado em minúsculo — deve ser o mesmo na leitura e escrita
+tarefasSalvas.forEach(...)	substitui o tarefasSalvas.array.forEach(...) que estava errado
+li.addEventListener('click', ...)	adiciona comportamento visual (riscado)
+li.addEventListener('dblclick', ...)	adiciona comportamento de exclusão
+document.getElementById('limpar')	usa o botão do seu HTML para limpar tudo corretamente

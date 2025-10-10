@@ -11,10 +11,13 @@
   <body>
     <main id="geral">
       <h1 id="lista">Lista de tarefas</h1>
+      <!-- Área de entrada de texto + botão -->
       <section class="input-area">
         <label for="input-tarefa">Nova tarefa:</label><!-- Acessibilidade, o label conecta ao input (importante para leitores de tela)-->
-        <input type="text" id="input-tarefa" placeholder="Digite uma tarefa..." />
+        <input type="text" id="input-tarefa" placeholder="Digite uma tarefa..." 
+        />
         <button id="botao">Adicionar</button>
+        <button id="limpar" class="limpar">Limpar</button>
       </section>
       <ul id="tarefas"></ul>
     </main>
