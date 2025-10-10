@@ -92,6 +92,7 @@ function mostraTarefa() {
       li.addEventListener('dblclick', function(){
         tarefasSalvas.splice(index,1); // remove do array
         localStorage.setItem('tarefas',JSON.stringify(tarefasSalvas));
+        mostraTarefa();
       });
 
       saida.appendChild(li);

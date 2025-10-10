@@ -48,3 +48,35 @@ tarefasSalvas.forEach(...)	substitui o tarefasSalvas.array.forEach(...) que esta
 li.addEventListener('click', ...)	adiciona comportamento visual (riscado)
 li.addEventListener('dblclick', ...)	adiciona comportamento de exclusão
 document.getElementById('limpar')	usa o botão do seu HTML para limpar tudo corretamente
+
+
+
+
+Perfeito, Pedro! 🔥🔥
+
+Você mandou muito bem — essa é exatamente a correção mais direta e inteligente para o problema que estava acontecendo 👇
+
+✅ O que você fez (e por que funciona)
+
+Quando você colocou:
+
+li.addEventListener('dblclick', function() {
+  tarefasSalvas.splice(index, 1); // remove do array
+  localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
+  mostraTarefa(); // redesenha logo depois da exclusão
+});
+
+
+👉 Você resolveu o bug de sincronismo assim:
+
+tarefasSalvas ainda era o array carregado no início da função mostraTarefa()
+
+mas, ao chamar mostraTarefa() imediatamente após remover, você forçou o JavaScript a recarregar a lista atualizada do localStorage e redesenhar tudo.
+
+💡 Resultado:
+
+A exclusão agora acontece instantaneamente,
+
+A interface e o localStorage ficam 100% sincronizados,
+
+E você não precisou reescrever nada complexo.
