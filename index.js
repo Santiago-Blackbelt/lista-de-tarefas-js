@@ -43,68 +43,76 @@ function adicionarTarefa() {
   input.value = "";
 }
 
-
 function adiciona() {
- 
   /* Pega o valor digitado no campo de input com id='input-tarefa' */
-  let valor = document.getElementById('input-tarefa').value.trim();
+  let valor = document.getElementById("input-tarefa").value.trim();
 
   /* se o campo estiver vazio, alerta o usuário */
-  if(valor === ''){
-    alert('Informe uma tarefa!');
+  if (valor === "") {
+    alert("Informe uma tarefa!");
     return; /* sai dda função e não continua */
   }
 
   /* Verifica se já existe algo salvo no localStorage(ou cria um array vazio) */
-  let listadeTarefas =JSON.parse(localStorage.getItem('tarefas')) || [];
+  let listadeTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
   /* Adiciona a nova tarefa ao array */
   listadeTarefas.push(valor);
 
   /* Salva novamente no localStorage, converteendo o array para texto JSON */
-  localStorage.setItem('tarefas', JSON.stringify(listadeTarefas));
+  localStorage.setItem("tarefas", JSON.stringify(listadeTarefas));
 
   /* Limpa o campo de input para o usuário digitar outra tarefa */
-  document.getElementById('input-tarefa').value = '';
-  
+  document.getElementById("input-tarefa").value = "";
+
   /* Atualiza a area de exibição chamando a função que mostra as tarefas */
   mostraTarefa();
 }
 
 /* Função seaparada para mostrar as tarefas na tela */
 function mostraTarefa() {
-  let tarefasSalvas = JSON.parse(localStorage.getItem('tarefas')) || [];
-  let saida = document.getElementById('tarefas');// <ul id="tarefas">
+  let tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
+  let saida = document.getElementById("tarefas"); // <ul id="tarefas">
 
   /* Limpa o conteúdo antes de mostrar */
-  saida.innerHTML = '';
+  saida.innerHTML = "";
 
-  /* Cria uma lista <ul> com cada tarefa dentro de um <li> */
-  tarefasSalvas.forEach(function (tarefa, index) {
-    /* cria o elemento <li> */
-    const li = document.createElement('li');
-    li.textContent = tarefa;
-    /* adiciona comportamento: riscar ao clicar */
-    li.addEventListener('click', function(){
-      li.classList.toggle('done');// usa sua classe do CSS
-    });
-      /* duplo clique: remove a tarefa e salva novamente */
-      li.addEventListener('dblclick', function(){
-        tarefasSalvas.splice(index,1); // remove do array
-        localStorage.setItem('tarefas',JSON.stringify(tarefasSalvas));
-        mostraTarefa();
-      });
+  tarefasSalvas.forEach((tarefa, index) => {
+  // aceita string antiga OU objeto novo
+  const texto = typeof tarefa === 'string' ? tarefa : tarefa.texto;
+  const done  = typeof tarefa === 'string' ? false   : !!tarefa.done;
 
-      saida.appendChild(li);
-    
+  const li = document.createElement('li');
+  li.textContent = texto;
+  if (done) li.classList.add('done');
+
+  li.addEventListener('click', () => {
+    // garanta o objeto para salvar estado
+    const obj = typeof tarefa === 'string' ? { texto, done: false } : tarefa;
+    obj.done = !obj.done;
+    tarefasSalvas[index] = obj;
+    localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
+    mostraTarefa();
   });
+
+  li.addEventListener('dblclick', () => {
+    tarefasSalvas.splice(index, 1);
+    localStorage.setItem('tarefas', JSON.stringify(tarefasSalvas));
+    mostraTarefa();
+  });
+
+  saida.appendChild(li);
+});
+
 }
 
 /* Chama a função assim que a página abrir, para carregar as tarefas antigas  */
-document.addEventListener("DOMContentLoaded", mostraTarefa); 
+document.addEventListener("DOMContentLoaded", mostraTarefa);
+
 
 /* Botão para limpar toda a lista */
-document.getElementById('limpar').addEventListener('click', () => {
-  localStorage.removeItem('tarefas');// apaga tudo do localStorage
-  mostraTarefa();// limpa a tela
-})
+document.getElementById("limpar").addEventListener("click", () => {
+  localStorage.removeItem("tarefas"); // apaga tudo do localStorage
+  mostraTarefa(); // limpa a tela
+});
+
