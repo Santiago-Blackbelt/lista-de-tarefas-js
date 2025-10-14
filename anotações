@@ -4,9 +4,9 @@
 
  Issue “Marcar/desmarcar como concluída” ok
 
- Issue “Salvar no localStorage”
+ Issue “Salvar no localStorage” ok
 
- Issue “Carregar do localStorage ao abrir página”
+ Issue “Carregar do localStorage ao abrir página”ok
 
  Issue “Responsividade (desktop / mobile)”
 
@@ -80,3 +80,14 @@ A exclusão agora acontece instantaneamente,
 A interface e o localStorage ficam 100% sincronizados,
 
 E você não precisou reescrever nada complexo.
+
+
+Salvar estado (concluída)
+
+Você já fez:
+
+Migração para { texto, done };
+
+Persistência completa (fecha/abre e continua riscado).
+
+📍 Concluído com sucesso

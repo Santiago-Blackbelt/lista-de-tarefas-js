@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de tarefas</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="index.js" defer></script>
   </head>
 
   <body>
     <main id="geral">
-      <h1 id="lista">Lista de tarefas</h1>
+      <div id="form-header">
+        <h1 id="lista">Lista de tarefas</h1>
+
+        <i class="fa-solid fa-moon" id="mode-icon"></i>
+      </div>
       <!-- Área de entrada de texto + botão -->
       <section class="input-area">
-        <label for="input-tarefa">Nova tarefa:</label><!-- Acessibilidade, o label conecta ao input (importante para leitores de tela)-->
-        <input type="text" id="input-tarefa" placeholder="Digite uma tarefa..." 
+        <label for="input-tarefa" id="dog">Digite :</label
+        ><!-- Acessibilidade, o label conecta ao input (importante para leitores de tela)-->
+        <input
+          type="text"
+          id="input-tarefa"
+          placeholder="Digite uma tarefa..."
         />
         <button id="botao">Adicionar</button>
         <button id="limpar" class="limpar">Limpar</button>
