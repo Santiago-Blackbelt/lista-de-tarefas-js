@@ -8,13 +8,13 @@
 
  Issue “Carregar do localStorage ao abrir página”ok
 
- Issue “Responsividade (desktop / mobile)”
+ Issue “Responsividade (desktop / mobile)”ok
 
  Issue “Deploy e link no README”
 
  Issue “Variação extra: tema claro / escuro / filtros / busca”
 
-
+-----------------------------------------------------------------------
 
  🧾 RESUMO FINAL — O QUE MUDAR E POR QUÊ
 Área	O que mudar	Por quê
@@ -25,7 +25,7 @@ Extras	limpar valores com .trim(), usar const/let corretamente	boas práticas mo
 
 
 
-
+---------------------------------------------------------------------
 
 
 🧠 3️⃣ Explicação das mudanças
@@ -37,7 +37,7 @@ listaDeTarefas.push(valor)	Adiciona o texto ao array antes de salvar	Atualiza li
 mostraTarefas()	Função separada só pra exibir	Código mais limpo e reutilizável
 forEach no mostraTarefas()	Percorre todas as tarefas e mostra uma por linha	Exibição correta no HTML
 
-
+-------------------------------------------------------------------------
 
 🧠 PRINCIPAIS AJUSTES E PORQUÊ
 Ajuste	Explicação
@@ -49,7 +49,7 @@ li.addEventListener('click', ...)	adiciona comportamento visual (riscado)
 li.addEventListener('dblclick', ...)	adiciona comportamento de exclusão
 document.getElementById('limpar')	usa o botão do seu HTML para limpar tudo corretamente
 
-
+----------------------------------------------------------------------------
 
 
 Perfeito, Pedro! 🔥🔥
@@ -91,3 +91,63 @@ Migração para { texto, done };
 Persistência completa (fecha/abre e continua riscado).
 
 📍 Concluído com sucesso
+
+--------------------------------------------------------------
+🧾 ✅ ANÁLISE GERAL DO PROJETO ATUAL
+🧱 HTML (index.html)
+
+✔️ Melhorias visuais e estruturais
+
+Adicionou corretamente a ilustração SVG com img src="img/task-animate (1).svg", mantendo o alt descritivo.
+
+O meta viewport está presente ✅ — essencial pra responsividade.
+
+A estrutura está bem hierarquizada com <main> e <section> (semântica correta).
+
+Ícone de modo escuro (fa-moon) já incluído, pronto pra próxima fase 🌙.
+
+CSS e JS carregados de forma correta (<link> e <script defer>).
+
+🟢 Recomendação menor:
+Quando for adicionar o modo escuro, você pode mover o <section> da imagem dentro do <main>, para que o tema escuro afete também o SVG (se quiser aplicar filtro de cor depois).
+
+
+💻 JavaScript (index.js)
+
+✔️ Ótima implementação funcional
+
+Código bem comentado e limpo.
+
+localStorage funcionando perfeitamente (com compatibilidade pra versões antigas).
+
+Atualização de estado e exclusão funcionando com click e dblclick.
+
+Uso correto de DOMContentLoaded pra exibir as tarefas logo ao abrir a página.
+
+O mostraTarefa() agora suporta tanto o formato antigo (string) quanto o novo (objeto com {texto, done}) — isso é muito profissional.
+
+
+
+🎨 CSS (style.css)
+
+✔️ Impecável visualmente
+
+Você usou variáveis CSS (:root) — excelente, isso vai facilitar MUITO o tema escuro.
+
+O degradê roxo está suave e moderno.
+
+Responsividade ajustada corretamente com:
+
+@media only screen and (max-width: 950px)
+@media only screen and (max-width: 600px)
+
+
+(agora com espaçamento certo e unidades corretas ✅)
+
+Uso coerente de vw — deixa o layout fluido.
+
+A .done tem destaque elegante (roxo no hover) e boa diferenciação visual.
+
+O hover das tarefas foi corrigido — destaca apenas o item individual.
+
+Imagem responsiva com max-width: 500px.

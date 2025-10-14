@@ -5,18 +5,22 @@ dpois começa a alterar os elementos "especificos"(#container ,#botao,  etc..)
   font-family: "roboto", sans-serif;
 }
 :root {
-  --color-light-50:#f8fafc;
+  --color-light-50: #f8fafc;
 
-  --color-dark-50:#797984;
-  --color-dark-100:#312d37;
-  --color-dark-900:#000;
+  --color-dark-50: #797984;
+  --color-dark-100: #312d37;
+  --color-dark-900: #000;
 
-  --color-purple-50:#7c3aed;
-  --color-purple-100:#a855f7;
-  --color-purple-200:#bf46ef;
+  --color-purple-50: #7c3aed;
+  --color-purple-100: #a855f7;
+  --color-purple-200: #bf46ef;
 
-  --color-gradient:linear-gradient(90deg, var(--color-purple-50),var(--color-purple-100 ), var(--color-purple-200)); 
-
+  --color-gradient: linear-gradient(
+    90deg,
+    var(--color-purple-50),
+    var(--color-purple-100),
+    var(--color-purple-200)
+  );
 }
 
 body {
@@ -27,8 +31,7 @@ body {
   color: white; /* Cor da letra */
   user-select: none; /* desliga a seleção do usuario(evita que o usuario copie o texto )*/
   background: var(--color-gradient);
-   
- 
+  box-sizing: border-box;
 }
 
 #geral {
@@ -48,10 +51,9 @@ body {
 }
 
 #form-header {
-display: flex;
- align-items: center;
- justify-content: space-between;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #form-header h1 {
@@ -59,28 +61,25 @@ display: flex;
   position: relative;
 }
 
-#form-header h1::before{
-position: absolute;
-content: '';
-width: 40%;
-background-color: var(--color-purple-50);
-height: 3px;
-bottom: 5px;
-border-radius: 5px;
-
+#form-header h1::before {
+  position: absolute;
+  content: "";
+  width: 40%;
+  background-color: var(--color-purple-50);
+  height: 3px;
+  bottom: 5px;
+  border-radius: 5px;
 }
 
-#mode-icon{
+#mode-icon {
   cursor: pointer;
   font-size: 20px;
- 
 }
 
-#mode-icon:hover{
-  transform: scale(1.5);/* Aumenta o elemento ao passar o cursor */
+#mode-icon:hover {
+  transform: scale(1.5); /* Aumenta o elemento ao passar o cursor */
   color: var(--color-purple-100);
 }
-
 
 #input-tarefa {
   /* Campo onde vamos digitar as tarefas */
@@ -93,11 +92,8 @@ border-radius: 5px;
   font-size: 16px; /* Tamanho da letra */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efetio de sombra */
   color: #333;
-   outline: none;
+  outline: none;
 }
-
-
-
 
 #botao {
   /* Botao de adicionar */
@@ -115,8 +111,7 @@ border-radius: 5px;
 #botao:hover {
   /* Estilo quando passar o mouse sobre o botao */
   background-color: rgb(217, 109, 0); /* Cor de fundo */
-  transform: scale(1.01);/* Aumenta o elemento ao passar o cursor */
-
+  transform: scale(1.01); /* Aumenta o elemento ao passar o cursor */
 }
 
 #botao:active {
@@ -132,13 +127,11 @@ border-radius: 5px;
   text-align: left; /* Alinhamento do texto a esquerda */
   cursor: pointer; /* Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis */
   color: var(--color-dark-100);
-  
 }
 
-#tarefas li:hover{
-  
+#tarefas li:hover {
   opacity: 0.7; /* Deixa a tarefa mais "apagada" */
-  
+
   transform: scale(1.01);
 }
 
@@ -148,12 +141,11 @@ border-radius: 5px;
   opacity: 0.7; /* Deixa a tarefa mais "apagada" */
   color: var(--color-dark-50);
 }
-.done:hover{
+.done:hover {
   text-decoration: line-through; /* Risca o texto */
   opacity: 0.7; /* Deixa a tarefa mais "apagada" */
   color: var(--color-purple-200);
   transform: scale(1.01);
-
 }
 
 #limpar {
@@ -174,7 +166,7 @@ border-radius: 5px;
 #limpar:hover {
   /* Estilo quando passar o mouse sobre o botao */
   background-color: rgb(217, 109, 0); /* Cor de fundo */
-  transform:scale(1.01) ;/* Aumenta o elemento ao passar o cursor */
+  transform: scale(1.01); /* Aumenta o elemento ao passar o cursor */
 }
 
 #limpar:active {
@@ -185,5 +177,23 @@ border-radius: 5px;
 #dog {
   font-size: 20px;
   color: var(--color-dark-50);
-  
+}
+
+.imagem-tarefas {
+  max-width: 500px;
+  min-width: auto;
+}
+
+@media only screen and (max-width: 950px) {
+  /* Quando a tela for menor  que 950px ele deve ter no máximo 85% do tamanho   */
+  #geral {
+    width: 80vw; /* vw = porcentagem da largura da tela */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+#geral{
+  width: 80vw;
+  height: auto;
+}
 }
