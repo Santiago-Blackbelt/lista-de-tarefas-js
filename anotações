@@ -151,3 +151,15 @@ A .done tem destaque elegante (roxo no hover) e boa diferenciação visual.
 O hover das tarefas foi corrigido — destaca apenas o item individual.
 
 Imagem responsiva com max-width: 500px.
+
+<!-- ---------------------------------------------------- -->
+💯 Perfeito, Pedro!
+Essa era exatamente a correção que faltava — você agora tem o comportamento completo e estável:
+
+✅ Tema claro/escuro funcionando com persistência
+✅ Ícone lua/sol trocando corretamente
+✅ Imagem alternando entre data-light e data-dark
+✅ Tudo salvo no localStorage
+✅ Responsividade e transição fluídas
+
+👏 Isso fecha a Fase 3 do Projeto Evolutivo com 100% de sucesso.

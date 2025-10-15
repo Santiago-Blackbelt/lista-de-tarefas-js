@@ -21,6 +21,15 @@ dpois começa a alterar os elementos "especificos"(#container ,#botao,  etc..)
     var(--color-purple-100),
     var(--color-purple-200)
   );
+
+  --color-gradient-dark: linear-gradient(
+    90deg,
+    var(--color-dark-50),
+    var(--color-dark-100),
+    var(--color-dark-900)
+  );
+
+  
 }
 
 body {
@@ -28,10 +37,10 @@ body {
   text-align: center; /* Alinhamento do conteúdo: centro */
   font-family: monospace; /* fonte da letra: monospace */
   margin-top: 50px; /* Distancia do topo da pagina */
-  color: white; /* Cor da letra */
   user-select: none; /* desliga a seleção do usuario(evita que o usuario copie o texto )*/
   background: var(--color-gradient);
   box-sizing: border-box;
+  animation: dark-to-light 1.5s ease-in-out; /* Cria uma animação para as trasições de cores */
 }
 
 #geral {
@@ -47,7 +56,8 @@ body {
   box-shadow: 5 5px 10px rgba(0, 0, 0, 0.335); /* efetio de sombra */
   gap: 30px;
 
-  color: var(--color-dark-100);
+  color: var(--color-dark-900);
+  animation: dark-to-light 1.5s ease-in-out; /* Cria uma animação para as trasições de cores */
 }
 
 #form-header {
@@ -78,7 +88,7 @@ body {
 
 #mode-icon:hover {
   transform: scale(1.5); /* Aumenta o elemento ao passar o cursor */
-  color: var(--color-purple-100);
+  color: var(--color-dark-50);
 }
 
 #input-tarefa {
@@ -91,7 +101,7 @@ body {
   padding-left: 10px; /* Margem interna á esquerda */
   font-size: 16px; /* Tamanho da letra */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efetio de sombra */
-  color: #333;
+  color: var(--color-dark-900);
   outline: none;
 }
 
@@ -192,8 +202,126 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-#geral{
-  width: 80vw;
-  height: auto;
+  #geral {
+    width: 80vw;
+    height: auto;
+  }
 }
+
+/* ----------------MODO DARK------------------------------------------------------------------------ */
+
+.dark #geral {
+  color: var(--color-light-50);
+  background: var(--color-gradient-dark);
 }
+
+.dark #dog {
+  font-size: 20px;
+  color: var(--color-light-50);
+}
+.dark #tarefas {
+  color: var(--color-light-50);
+}
+
+/* Tema escuro */
+.dark #mode-icon:hover {
+  transform: scale(1.5); /* Aumenta o elemento ao passar o cursor */
+  color: var(--color-purple-100);
+}
+
+body.dark {
+  width: 100%; /* Largura 100% da tela */
+  text-align: center; /* Alinhamento do conteúdo: centro */
+  font-family: monospace; /* fonte da letra: monospace */
+  margin-top: 50px; /* Distancia do topo da pagina */
+  color: white; /* Cor da letra */
+  user-select: none; /* desliga a seleção do usuario(evita que o usuario copie o texto )*/
+  background: var(--color-gradient-dark);
+  box-sizing: border-box;
+  animation: light-to-dark 0.3s ease-in-out; /* Cria uma animação para as trasições de cores */
+}
+
+.imagem-tarefas.dark {
+  max-width: 500px;
+  min-width: auto;
+}
+
+.dark #limpar {
+  /* botão de limpar a lista */
+  font-size: 16px; /* Tamanho da letra */
+  /* Fonte da letra */
+  width: 25%; /* largura da caixa */
+  height: 38px; /* Altura */
+  border-radius: 10px; /* Arredondamento da borda */
+  background-color: var(--color-dark-100); /* Cor de fundo */
+  color: var(--color-light-50); /* Cor da letra */
+  border: none; /* Tira a borda */
+  cursor: pointer; /*  Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis  */
+  margin: 10px;
+  box-shadow: 0 0 1px 1px var(--color-light-50);
+}
+
+.dark #limpar:hover {
+  /* Estilo quando passar o mouse sobre o botao */
+ background-color: var(--color-dark-100); /* Cor de fundo */
+  transform: scale(1.01); /* Aumenta o elemento ao passar o cursor */
+  box-shadow: 0 0 4px 4px var(--color-light-50); /* efetio de sombra */
+  
+}
+
+.dark #limpar:active {
+ /* Estilo de quando clicar no botao */
+   box-shadow: 0 0 4px 4px var(--color-purple-50); /* efetio de sombra */
+}
+
+.dark #botao {
+  /* Botao de adicionar */
+  font-size: 16px; /* Tamanho da letra */
+  width: 25%; /* Largura da caixa(porque ela está dentro da caixa */
+  height: 38px; /* Altura */
+  border-radius: 10px; /* Arredondamento da borda */
+  background-color: var(--color-gradient-dark); /* Cor de fundo */
+  color: var(--color-light-50); /* cor da letra */
+  border: none; /* Desativa a borda */
+  cursor: pointer; /* Faz o cursor do mouse virer um ponteiro quando passar em cima das tarefas mostrando que elas são clicaveis */
+  box-shadow: 0 0 1px 1px var(--color-light-50); /* efetio de sombra */
+}
+
+.dark #botao:hover {
+  /* Estilo quando passar o mouse sobre o botao */
+  background-color: var(--color-dark-100); /* Cor de fundo */
+  transform: scale(1.01); /* Aumenta o elemento ao passar o cursor */
+  box-shadow: 0 0 4px 4px var(--color-light-50); /* efetio de sombra */
+  
+}
+
+.dark #botao:active {
+  /* Estilo de quando clicar no botao */
+   box-shadow: 0 0 4px 4px var(--color-purple-50); /* efetio de sombra */
+}
+
+.dark .done {
+  /* Adiciona um estilo para a tarefa riscada */
+  text-decoration: line-through; /* Risca o texto */
+  opacity: 0.6; /* Deixa a tarefa mais "apagada" */
+  color: var(--color-light-50);
+  
+}
+.dark .done:hover {
+  text-decoration: line-through; /* Risca o texto */
+  opacity: 0.7; /* Deixa a tarefa mais "apagada" */
+  color: var(--color-dark-100);
+  transform: scale(1.01);
+}
+
+.dark #form-header h1::before {
+  position: absolute;
+  content: "";
+  width: 40%;
+  background-color: var(--color-dark-50);
+  height: 3px;
+  bottom: 5px;
+  border-radius: 5px;
+  
+}
+
