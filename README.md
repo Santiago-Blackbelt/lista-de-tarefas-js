@@ -1,14 +1,14 @@
-# 📝 Lista de Tarefas (JS)
+# 🌞🌙 Soluna Tasks
 
-Projeto desenvolvido como parte do **Projeto Evolutivo – Semana 1 (Fase 1–2)**.  
-Uma aplicação simples e funcional para criar, marcar e excluir tarefas do dia-a-dia, agora com **salvamento automático (localStorage)**.
+Projeto desenvolvido como parte do **Projeto Evolutivo – Fase 3 (Front-End)**.  
+Uma aplicação moderna e funcional para **gerenciar tarefas** com **modo claro/escuro**, **persistência de dados** e **layout responsivo**.
 
 ---
 
 ## 🚀 Tecnologias utilizadas
-- **HTML5** – estrutura semântica  
-- **CSS3** – layout responsivo e visual limpo  
-- **JavaScript (ES6+)** – manipulação do DOM e lógica do app  
+- **HTML5** – estrutura semântica e acessível  
+- **CSS3** – estilo responsivo e tema dinâmico (light/dark)  
+- **JavaScript (ES6+)** – lógica, manipulação do DOM e persistência local com `localStorage`  
 
 ---
 
@@ -16,14 +16,28 @@ Uma aplicação simples e funcional para criar, marcar e excluir tarefas do dia-
 - ✅ Adicionar novas tarefas  
 - ✅ Marcar como concluída (com um clique)  
 - ✅ Remover tarefa (duplo clique)  
-- ✅ Salvar automaticamente no localStorage  
-- ✅ Limpar todas as tarefas de uma vez  
+- ✅ Salvar automaticamente no `localStorage`  
+- ✅ Limpar todas as tarefas  
+- ✅ Tema **claro/escuro** com troca de ícone (🌞 / 🌙)  
+- ✅ Ilustração dinâmica que muda conforme o tema (usando `dataset.light` e `dataset.dark`)  
+- ✅ Tema e tarefas permanecem salvos mesmo após fechar o navegador  
+- ✅ Layout **responsivo**, adaptado para dispositivos móveis  
 
 ---
 
-## 🧠 Aprendizados
-- Manipulação de elementos DOM  
-- Uso de eventos (click, dblclick)  
-- Armazenamento de dados com `localStorage`  
-- Refatoração e boas práticas de código  
-- Versionamento com Git e GitHub  
+## 🧠 Aprendizados e foco
+- Manipulação avançada de DOM  
+- Eventos personalizados (`click`, `dblclick`, `DOMContentLoaded`)  
+- Armazenamento e leitura de dados com `localStorage`  
+- Alternância de temas com persistência e transição suave  
+- Organização e refatoração de código  
+- Versionamento com **Git** e publicação no **GitHub**
+
+---
+
+## 🧩 Fases do Projeto Evolutivo
+Fase	Conteúdo	Status
+Fase 1	Estrutura básica (HTML + JS)	✅ Concluída
+Fase 2	Implementação de LocalStorage	✅ Concluída
+Fase 3	Tema claro/escuro, responsividade e UX	✅ Concluída
+Fase 4	Edição, animações e filtros inteligentes	🔜 Em desenvolvimento
